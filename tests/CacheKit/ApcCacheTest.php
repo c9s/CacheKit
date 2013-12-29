@@ -4,6 +4,13 @@ class ApcCacheTest extends PHPUnit_Framework_TestCase
 {
     public function test()
     {
+
+        if ( ! extension_loaded('apc') ) {
+            skip('apc extension is required.');
+        }
+
+
+
         $cache = new CacheKit\ApcCache(array( 
             'namespace' => 'app_'
         ));

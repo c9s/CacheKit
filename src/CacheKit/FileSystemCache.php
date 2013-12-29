@@ -12,6 +12,8 @@ class FileSystemCache
     public $filenameBuilder;
 
     public $serializer;
+
+    public $cacheDir;
     
     public function __construct($options = array() )
     {
@@ -38,10 +40,10 @@ class FileSystemCache
         };
     }
 
-
     public function _getCacheFilepath($key)
     {
-        $filename = call_user_func($this->filenameBuilder,$key);
+        // $filename = call_user_func($this->filenameBuilder,$key);
+        $filename = preg_replace('#\W+#','_',$key);
         return $this->cacheDir . DIRECTORY_SEPARATOR . $filename;
     }
 
