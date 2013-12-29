@@ -1,5 +1,5 @@
 {
-    "name": "c9s/cachekit",
+    "name": "corneltek/cachekit",
     "homepage": "http://github.com/c9s/CacheKit",
     "description": "General cache interface",
     "require": {
